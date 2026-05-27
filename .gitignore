@@ -1,0 +1,30 @@
+# Ambiente
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Relatórios gerados pelo agente
+reports/*.md
+
+# Banco de dados local
+*.db
+*.sqlite3
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/

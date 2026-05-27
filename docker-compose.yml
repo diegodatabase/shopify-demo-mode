@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sales_agent_db
+    environment:
+      POSTGRES_DB: sales_agent
+      POSTGRES_USER: sales_agent
+      POSTGRES_PASSWORD: sales_agent_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sales_agent -d sales_agent"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
